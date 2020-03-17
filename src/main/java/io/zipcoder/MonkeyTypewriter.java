@@ -1,5 +1,6 @@
 package io.zipcoder;
 
+
 import java.util.ArrayList;
 
 public class MonkeyTypewriter {
@@ -26,25 +27,13 @@ public class MonkeyTypewriter {
         // For each Copier(one safe and one unsafe), create and start 5 monkeys copying the introduction to
         // A Tale Of Two Cities.
         UnsafeCopier unsafeCopier = new UnsafeCopier(introduction);
-        ArrayList<Thread> threads = new ArrayList<Thread>();
-        Thread monkey0 = new Thread(unsafeCopier);
-        Thread monkey1 = new Thread(unsafeCopier);
-        Thread monkey2 = new Thread(unsafeCopier);
-        Thread monkey3 = new Thread(unsafeCopier);
-        Thread monkey4 = new Thread(unsafeCopier);
-        threads.add(monkey0);
-        threads.add(monkey1);
-        threads.add(monkey2);
-        threads.add(monkey3);
-        threads.add(monkey4);
+        ArrayList<Thread> unsafeThreads = new ArrayList<Thread>();
+        Thread monkey;
         for (int i = 0; i < 5; i++) {
-            threads.get(i).setName("Monkey "+i);
-            threads.get(i).start();
-            try {
-                threads.get(i).sleep(1);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+             monkey = new Thread(unsafeCopier);
+             unsafeThreads.add(monkey);
+             unsafeThreads.get(i).setName("Monkey "+i);
+             unsafeThreads.get(i).start();
         }
 
 //        SafeCopier safeCopier = new SafeCopier(introduction);
