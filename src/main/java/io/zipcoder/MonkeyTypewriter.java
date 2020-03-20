@@ -36,17 +36,17 @@ public class MonkeyTypewriter {
              unsafeThreads.get(i).start();
         }
 
-//        SafeCopier safeCopier = new SafeCopier(introduction);
-//        Thread monkeya = new Thread(safeCopier);
-//        Thread monkeyb = new Thread(safeCopier);
-//        Thread monkeyc = new Thread(safeCopier);
-//        Thread monkeyd = new Thread(safeCopier);
-//        Thread monkeye = new Thread(safeCopier);
-//        monkeya.start();
-//        monkeyb.start();
-//        monkeyc.start();
-//        monkeyd.start();
-//        monkeye.start();
+        SafeCopier safeCopier = new SafeCopier(introduction);
+        Thread monkeya = new Thread(safeCopier);
+        Thread monkeyb = new Thread(safeCopier);
+        Thread monkeyc = new Thread(safeCopier);
+        Thread monkeyd = new Thread(safeCopier);
+        Thread monkeye = new Thread(safeCopier);
+        monkeya.start();
+        monkeyb.start();
+        monkeyc.start();
+        monkeyd.start();
+        monkeye.start();
 
 
 
@@ -64,8 +64,8 @@ public class MonkeyTypewriter {
 
         System.out.println(unsafeCopier.copiedText);
         System.out.println("------Unsafe Ended------");
-//        System.out.println(safeCopier.copied);
-//        System.out.println("------Safe Ended------");
+        System.out.println(safeCopier.copied);
+        System.out.println("------Safe Ended------");
 
     }
 }
